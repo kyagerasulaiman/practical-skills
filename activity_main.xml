@@ -2,79 +2,72 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/backgrundpatten"
-    tools:context="com.example.resses.thistym.MainActivity">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="nathanheller.leafit.MainActivity">
 
+        android:layout_width="match_parent"
+    <ImageView
+        android:layout_height="350dp"
+        app:srcCompat="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/tetView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="learn more about leaves and plants"
-            android:textSize="20dp"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_centerHorizontal="true" />
+    <Button
+        android:text="Analyze This Photo?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imageView"
+        android:onClick="analyzeImage"
+        android:id="@+id/analyzeButton"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:visibility="gone" />
 
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="74dp"
-            android:text="CAMERA"
-            android:textSize="25dp"
-            android:layout_below="@+id/tetView"
-            android:layout_alignLeft="@+id/tetView"
-            android:layout_alignStart="@+id/tetView" />
+    <Button
+        android:text="Take Photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/analyzeButton"
+        android:onClick="launchCameraIntent"
+        android:id="@+id/cameraButton" />
 
-        <Button
-            android:id="@+id/b2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LEAF quiz"
-            android:textSize="25dp"
-            android:layout_marginTop="33dp"
-            android:layout_below="@+id/b1"
-            android:layout_alignLeft="@+id/b1"
-            android:layout_alignStart="@+id/b1"
-            android:layout_alignRight="@+id/tetView"
-            android:layout_alignEnd="@+id/tetView" />
+    <Button
+        android:text="Gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/cameraButton"
+        android:onClick="launchGalleryIntent"
+        android:id="@+id/galleryButton" />
 
-        <Button
-            android:id="@+id/b3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/b2"
-            android:layout_alignRight="@+id/b2"
-            android:layout_below="@+id/b2"
-            android:layout_marginTop="69dp"
-            android:text="saved data"
-            android:textSize="25dp"
-            android:layout_alignLeft="@+id/b2"
-            android:layout_alignStart="@+id/b2" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
 
-        <Button
-            android:id="@+id/b4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="gallery"
-            android:textSize="25dp"
-            android:layout_alignBottom="@+id/b1"
-            android:layout_toRightOf="@+id/b1"
-            android:layout_marginLeft="41dp"
-            android:layout_marginStart="41dp"
-            android:layout_alignRight="@+id/b2"
-            android:layout_alignEnd="@+id/b2"
-            android:layout_alignTop="@+id/b1" />
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"
+        android:onClick="backButton"
+        android:id="@+id/backButton"
+        android:visibility="gone" />
 
-
-    </RelativeLayout>
-
-
-
+</RelativeLayout>
